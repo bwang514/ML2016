@@ -1,7 +1,7 @@
 import sys
 
 def main():	
-	file = open("hw0_data.dat")
+	file = open(sys.argv[2])
 	lines = file.readlines(500000)
 	col = int(sys.argv[1]) + 1
 	output = []
