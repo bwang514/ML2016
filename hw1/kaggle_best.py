@@ -94,7 +94,7 @@ def main():
     Coef = gradient_descent_runner(data,Coef,learning_rate,num_iterations)
     predict = running_test_data(Coef,data_size)
     print predict
-    f = open('predict.csv', 'w')
+    f = open('kaggle_best.csv', 'w')
     f.write("id,value\n")
     for i in xrange(0,240) :
         tmp = "id_" + str(i) + "," + str(predict[i]) + "\n"  
