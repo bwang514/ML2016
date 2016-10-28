@@ -1,1 +1,1 @@
-python logistic_regression.py $1 $2
+python NN.py $1 $2

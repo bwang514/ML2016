@@ -1,1 +1,1 @@
-python lR_out.py $1 $2 $3
+python NN_out.py $1 $2 $3
