@@ -86,8 +86,9 @@ autoencoder.compile(optimizer = 'adadelta',loss = 'categorical_crossentropy',met
 autoencoder.fit(en,en,nb_epoch=60, batch_size=32)
 
 encoded = Model(input = inputs,output = encoder)
-
+encoded.save("pretrain_model.h5")
 hidden_outputs =  encoded.predict(X_flat)
+
 #get_layer_output = K.function([autoencoder.layers[0].input],
 #                             [autoencoder.layers[3].output])
 #hidden_outputs = get_layer_outpu

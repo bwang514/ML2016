@@ -26,15 +26,16 @@ predictionname = sys.argv[3]
 
 X_test = pickle.load(open(path + "test.p",'r'))
 X_test = np.array(X_test['data'])
-X_test = X_test.reshape(10000,3,32,32)
+X_test = X_test.reshape(10000,3072)
 X_test = X_test.astype('float32')
 
 X_test /= 255
-
+pretrain = load_model("pretrain_model.h5")
 model = load_model(modelname)
 
-
-out = model.predict_classes(X_test, batch_size=50, verbose=1)
+encoded = pretrain.predict(X_test,batch_size = 50)
+encoded = encoded.reshape(encoded.shape[0],1,16,16)
+out = model.predict_classes(encoded, batch_size=50, verbose=1)
 print out
 
 f = open(predictionname , 'w')
