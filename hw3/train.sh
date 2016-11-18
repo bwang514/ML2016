@@ -1,0 +1,1 @@
+python hw3_self_svmd.py $1 $2
